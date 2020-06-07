@@ -11412,7 +11412,7 @@ fabric.PatternBrush = fabric.util.createClass(fabric.PencilBrush, /** @lends fab
      * @param {Event} e Event object fired on mousedown
      */
     _onTouchStart: function(e) {
-      e.preventDefault();
+      !this.allowTouchScrolling && e.preventDefault && e.preventDefault();
       if (this.mainTouchId === null) {
         this.mainTouchId = this.getPointerId(e);
       }
